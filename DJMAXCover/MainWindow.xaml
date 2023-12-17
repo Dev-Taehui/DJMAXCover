@@ -1,0 +1,37 @@
+﻿<Window x:Class="DJMAXCover.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="CanResizeWithGrip"
+        SnapsToDevicePixels="True"
+        Topmost="True"
+        WindowStyle="None"
+        Closed="OnClosed"
+        KeyDown="OnKeyDown"
+        StateChanged="OnStateChanged"
+        Title="디맥 가리개">
+    <Grid>
+        <Grid x:Name="CoverGrid" Grid.Row="2" Background="Black" MouseRightButtonDown="OnMouseDown">
+            <StackPanel Visibility="{Binding Source, ElementName=CoverImage, Converter={StaticResource ReverseVisibilityConverter}}" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="레인 커버 이미지를 불러오려면 우클릭하세요" Foreground="White" />
+                <TextBlock Text="우하단 모서리 잡아서 크기 조절하세요" Foreground="White" />
+                <TextBlock Text="" />
+                <TextBlock Text="F2: 레인 커버 비율" Foreground="White" />
+                <TextBlock Text="F3: 상하 정렬" Foreground="White" />
+                <TextBlock Text="F4: 좌우 정렬" Foreground="White" />
+                <TextBlock Text="F5: 투명도" Foreground="White" />
+                <TextBlock Text="" />
+                <TextBlock Text="반드시 DJMAX RESPECT V의 디스플레이 모드를 Borderless Windowed나 Windowed로 설정하세요" Foreground="White" />
+                <TextBlock Text="" />
+                <TextBlock Text="문의: Dev Taehui (https://twitter.com/TaehuiNet)" Foreground="White" />
+            </StackPanel>
+            <Image x:Name="CoverImage" />
+            <TextBlock x:Name="StatusTextBlock" Foreground="White">
+                <TextBlock.Effect>
+                    <DropShadowEffect />
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</Window>
